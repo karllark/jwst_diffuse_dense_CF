@@ -60,6 +60,15 @@ if __name__ == "__main__":
         filename = filename.replace(".", "_ice.")
     average = ExtData(inpath + filename)
 
+    # make the plots
+    fontsize = fs
+    font = {"size": fontsize}
+    plt.rc("font", **font)
+    plt.rc("lines", linewidth=2)
+    plt.rc("axes", linewidth=2)
+    plt.rc("xtick.major", width=2)
+    plt.rc("ytick.major", width=2)
+
     # plot the residuals
     plt.rc("axes", linewidth=0.8)
     fig, ax = plt.subplots(
@@ -199,7 +208,7 @@ if __name__ == "__main__":
     # ax[1].plot(waves2, featext + extmod(waves2), "k-", alpha=0.7, label="G23 R(V)=3.1 + features")
     ax[1].set_ylim(0.01, 0.7)
     ax[1].set_yscale("log")
-    ax[1].set_ylabel(r"$A(\lambda)/A(V)$")
+    ax[1].set_ylabel(r"$A(\lambda)/A(V)$", fontsize=0.8*fs)
     # ax[1].legend(fontsize=0.5*fs)
 
     ax[2].text(
@@ -207,7 +216,7 @@ if __name__ == "__main__":
         0.0075,
         r"H$_2$O ice 3.0 $\mu$m",
         ha="center",
-        fontsize=0.6 * fs,
+        fontsize=0.8 * fs,
         rotation=90.0,
         color="b",
         backgroundcolor="white"
@@ -217,7 +226,7 @@ if __name__ == "__main__":
         0.01,
         r"C-H 3.3 $\mu$m",
         ha="center",
-        fontsize=0.6 * fs,
+        fontsize=0.8 * fs,
         rotation=90.0,
         color="g",
         backgroundcolor="white"
@@ -227,7 +236,7 @@ if __name__ == "__main__":
         0.01,
         r"C-H 3.4 $\mu$m",
         ha="center",
-        fontsize=0.6 * fs,
+        fontsize=0.8 * fs,
         rotation=90.0,
         color="r",
         backgroundcolor="white"
@@ -237,7 +246,7 @@ if __name__ == "__main__":
         0.0075,
         r"C-D 4.4 $\mu$m",
         ha="center",
-        fontsize=0.6 * fs,
+        fontsize=0.8 * fs,
         rotation=90.0,
         color="tab:olive",
         backgroundcolor="white"
@@ -248,7 +257,7 @@ if __name__ == "__main__":
         0.0075,
         r"C-D 4.65 $\mu$m",
         ha="center",
-        fontsize=0.6 * fs,
+        fontsize=0.8 * fs,
         rotation=90.0,
         color="tab:orange",
         backgroundcolor="white"
@@ -263,13 +272,13 @@ if __name__ == "__main__":
     # add observing info
     ccol = "tab:blue"
     ax[2].text(3.2, 0.0205, "NIRCam grism/F322W2", ha="center", 
-            fontsize=0.6*fontsize, color=ccol, alpha=0.7)
+            fontsize=0.8*fontsize, color=ccol, alpha=0.7)
     rect = patches.Rectangle((2.45, 0.02), 3.95 - 2.45, 0.002, linewidth=1, edgecolor=ccol, facecolor=ccol, alpha=0.3)
     ax[2].add_patch(rect)
 
     ccol = "tab:green"
     ax[2].text(4.5, 0.0235, "NIRCam grism/F444W", ha="center", 
-            fontsize=0.6*fontsize, color=ccol, alpha=0.7)
+            fontsize=0.8*fontsize, color=ccol, alpha=0.7)
     rect = patches.Rectangle((3.93, 0.023), 4.95 - 3.93, 0.002, linewidth=1, edgecolor=ccol, facecolor=ccol, alpha=0.3)
     ax[2].add_patch(rect)
 
