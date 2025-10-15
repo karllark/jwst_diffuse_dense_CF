@@ -206,7 +206,7 @@ if __name__ == "__main__":
     dave.plot(ax[1])
 
     # ax[1].plot(waves2, featext + extmod(waves2), "k-", alpha=0.7, label="G23 R(V)=3.1 + features")
-    ax[1].set_ylim(0.01, 0.7)
+    ax[1].set_ylim(0.005, 0.2)
     ax[1].set_yscale("log")
     ax[1].set_ylabel(r"$A(\lambda)/A(V)$", fontsize=0.8*fs)
     # ax[1].legend(fontsize=0.5*fs)
@@ -290,7 +290,7 @@ if __name__ == "__main__":
     plt.ylim(0.0, 0.025)
     ax[0].set_ylabel("Atmospheric\ntransmission", fontsize=0.6 * fs)
     ax[2].set_xlabel(r"$\lambda$ [$\mu m$]", fontsize=fs)
-    ax[2].set_ylabel("$A(\lambda)/A(V)$ scatter", fontsize=fs)
+    ax[2].set_ylabel(r"$A(\lambda)/A(V)$ scatter", fontsize=fs)
     fig.savefig(
         outpath + filename.replace("ext", "res").replace("fits", "pdf"),
         bbox_inches="tight",
